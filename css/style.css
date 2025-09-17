@@ -7,16 +7,16 @@
 /* Generics */
 body {
     font-family: "Edu Tas Beginner", "sans-serif", "monospace";
+    font-size: 20px;
+
 }
 
 h1 {
+    padding: 10px;
     text-align: center;
-    font-size: 2rem;
+    font-size: 4em;
+    font-weight: 800;
 }
-
-/* span {
-    display: block;
-} */
 
 /*  Header */
 .container-head {
@@ -26,13 +26,14 @@ h1 {
 
 /* Main */
 
-.container {
+main {
     background-image: url("../img/cork.png");
-    height: 100%;
+    min-height: 100vh;
+    padding-top: 60px;
 }
 
 .container-card {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     gap: 20px;
     display: flex;
@@ -43,15 +44,30 @@ h1 {
 /* Cards */
 
 .card {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 10px 10px 80px 10px;
+    padding: 10px;
     width: calc((100% / 3) - (40px / 3));
     background-color: white;
     margin: 20px 0;
+    font-weight: 800;
+    text-align: left;
+    min-width: 200px;
 }
 
-.test {
+.card:hover {
+    box-shadow: 3px;
+    transform: rotate(25deg);
+    transform: scale(2);
+    
+}
+
+img {
     max-width: 100%;
 }
+
+
+/* Smartphone M version */
+
+/* @media screen and (max-width:640px) {} */
+
+/* Smartphone S version */
+/* @media screen and (max-width:640px) {} */
