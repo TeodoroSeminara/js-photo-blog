@@ -12,16 +12,16 @@ body {
 }
 
 h1 {
-    padding: 10px;
     text-align: center;
     font-size: 4em;
     font-weight: 800;
+    padding: 20px;
 }
 
 /*  Header */
 .container-head {
     background-image: url("../img/wall.png");
-    height: 20vh;
+    height: 20%;
 }
 
 /* Main */
@@ -29,45 +29,91 @@ h1 {
 main {
     background-image: url("../img/cork.png");
     min-height: 100vh;
-    padding-top: 60px;
+    /* padding: 80px 0; */
 }
 
 .container-card {
-    width: 70%;
+    width: 80%;
+    /* width: calc((100% / 3) - (60px / 3)); */
     margin: 0 auto;
     gap: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 80px 0;
+
 }
 
 /* Cards */
 
 .card {
     padding: 10px;
-    width: calc((100% / 3) - (40px / 3));
     background-color: white;
-    margin: 20px 0;
     font-weight: 800;
     text-align: left;
     min-width: 200px;
+    /* max-width: 400px; */
+    width: calc((100% / 3) - (60px / 3));
+    position: relative;
 }
 
 .card:hover {
-    box-shadow: 3px;
-    transform: rotate(25deg);
-    transform: scale(2);
-    
+    box-shadow: 5px 5px 50px 5px black;
+    cursor: pointer;
+    transform: scale(1.08) rotate(20deg) translateY(-5px);
+    transform-origin: center;
 }
+
+.card>.pin-position:hover {
+    display: none;
+}
+
 
 img {
     max-width: 100%;
 }
 
+.img-date {
+    font-weight: 400;
+    font-size: 0.8rem;
+}
 
-/* Smartphone M version */
+.pin-position {
+    position: absolute;
+    top: -15px;
+    right: calc(50% - 18px);
+    width: 36px;
+}
 
-/* @media screen and (max-width:640px) {} */
 
-/* Smartphone S version */
-/* @media screen and (max-width:640px) {} */
+/* Desktop XL */
+
+@media screen and (min-width: 1920px) {
+    .container-card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 140px 0;
+    }
+
+    .card {
+        flex: 0 0 calc((100% / 3) - (40px / 3));
+        max-width: calc((100% / 3) - (40px / 3));
+
+    }
+}
+
+/* Tablet 1020px */
+@media screen and (max-width: 1020px) {
+
+    .container-card {
+
+        padding: 80px 0;
+    }
+
+    .card {
+        flex: 0 0 calc(100% / 2 - 20px);
+        max-width: calc(100% / 2 - 20px);
+
+    }
+}

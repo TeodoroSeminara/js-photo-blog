@@ -12,12 +12,13 @@ axios.get(imgApi).then((response) => {
 
     resImg.forEach(element => {
         insertImg += `
-         <figure class="card">
-         <img src="${element.url}" alt="">
-         <figcaption>${element.date} <br> ${element.title.toUpperCase()}</figcaption>
-         </figure>
-
-                `;
+         <div class="card">
+         <img class="pin-position" src="../img/pin.svg" alt="pin">
+         <img src="${element.url}" alt="image">
+         <data class="img-date">${element.date}</data>
+         <p> ${element.title.toUpperCase()}</p>
+         </div>
+         `;
         cardContainer.innerHTML = insertImg;
     })
 });
