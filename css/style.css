@@ -18,6 +18,10 @@ h1 {
     padding: 20px;
 }
 
+.data-font {
+    font-family: "Sometype Mono", monospace;
+}
+
 /*  Header */
 .container-head {
     background-image: url("../img/wall.png");
@@ -29,18 +33,16 @@ h1 {
 main {
     background-image: url("../img/cork.png");
     min-height: 100vh;
-    /* padding: 80px 0; */
 }
 
 .container-card {
     width: 80%;
-    /* width: calc((100% / 3) - (60px / 3)); */
     margin: 0 auto;
     gap: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 80px 0;
+    padding: 90px 0;
 
 }
 
@@ -51,25 +53,26 @@ main {
     background-color: white;
     font-weight: 800;
     text-align: left;
-    min-width: 200px;
-    /* max-width: 400px; */
-    width: calc((100% / 3) - (60px / 3));
+    width: 400px;
     position: relative;
+    z-index: 800;
 }
 
 .card:hover {
     box-shadow: 5px 5px 50px 5px black;
     cursor: pointer;
-    transform: scale(1.08) rotate(20deg) translateY(-5px);
+    transform: scale(1.2) rotate(10deg) translateY(-5px);
+    transition: 0.5s;
     transform-origin: center;
+    z-index: 900;
 }
 
-.card>.pin-position:hover {
+.card:hover>.pin-position {
     display: none;
 }
 
 
-img {
+.api-img {
     max-width: 100%;
 }
 
@@ -85,10 +88,55 @@ img {
     width: 36px;
 }
 
+/* Overlay */
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.img-overlay {
+    height: 600px;
+}
+
+.ds-none {
+    display: none;
+}
+
+.ds-block {
+    display: block;
+}
+
+/* Button */
+
+.btn {
+    background: none;
+    color: rgba(35, 35, 35, 0.787);
+    background-color: rgba(255, 255, 255, 0.859);
+    border: 1px solid black;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    width: 100px;
+    height: 50px;
+    z-index: 2100;
+}
 
 /* Desktop XL */
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 2080px) {
     .container-card {
         display: flex;
         flex-wrap: wrap;
@@ -98,13 +146,12 @@ img {
 
     .card {
         flex: 0 0 calc((100% / 3) - (40px / 3));
-        max-width: calc((100% / 3) - (40px / 3));
-
+        max-width: 600px;
     }
 }
 
 /* Tablet 1020px */
-@media screen and (max-width: 1020px) {
+/* @media screen and (max-width: 1020px) {
 
     .container-card {
 
@@ -113,7 +160,7 @@ img {
 
     .card {
         flex: 0 0 calc(100% / 2 - 20px);
-        max-width: calc(100% / 2 - 20px);
+        max-width: 100%;
 
     }
-}
+} */
