@@ -96,18 +96,19 @@ main {
     height: 100%;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
     z-index: 2000;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding-top: 30px;
 }
 
-.img-overlay {
-    height: 600px;
+.big-img-container {
+    /* height: 800px; */
+    max-height: 80%;
+    max-width: 80%;
 }
 
 .ds-none {
@@ -132,6 +133,7 @@ main {
     width: 100px;
     height: 50px;
     z-index: 2100;
+    margin-bottom: 20px;
 }
 
 /* Desktop XL */

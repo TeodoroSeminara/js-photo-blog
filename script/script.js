@@ -3,29 +3,31 @@ const cardContainer = document.querySelector(".container-card");
 const imgApi = "https://lanciweb.github.io/demo/api/pictures/";
 const overlayImg = document.querySelector(".overlay");
 const btnClick = document.querySelector(".btn");
+const imgBig = document.querySelector(".big-img-container");
+
+
+
 
 
 
 axios.get(imgApi).then((response) => {
     const resImg = response.data;
     console.log(resImg);
-    let insertImg = "";
     resImg.forEach(element => {
-        insertImg += `
-         <div class="card">
+
+        const divCard = document.createElement("div");
+        divCard.classList.add("card");
+
+        let insertImg = `
          <img class="api-img" src="${element.url}" alt="image">
          <data class="img-date data-font">${element.date}</data>
          <p> ${element.title.toUpperCase()}</p>
          <img class="pin-position" src="../img/pin.svg" alt="pin">
-         </div>
          `;
-    })
-    cardContainer.innerHTML = insertImg;
 
-    const cardImg = document.querySelectorAll(".card")
+        divCard.innerHTML = insertImg;
 
-    cardImg.forEach(overlayBtn => {
-        overlayBtn.addEventListener("click", () => {
+        divCard.addEventListener("click", () => {
 
             const dsNone = overlayImg.classList.contains("ds-none")
             if (dsNone) {
@@ -33,19 +35,17 @@ axios.get(imgApi).then((response) => {
             } else {
                 overlayImg.classList.add("ds-none")
             };
-            resImg.forEach(element => {
-                selectImg = `
-         <img class="img-overlay" src="${element.url}" alt="image">         
-         `;
-                overlayImg.innerHTML = selectImg;
-            })
+
+            imgBig.src = `${element.url}`;
 
         })
 
         btnClick.addEventListener("click", () => {
             overlayImg.classList.add("ds-none");
         })
+
+        cardContainer.appendChild(divCard);
     })
+})
 
 
-});
